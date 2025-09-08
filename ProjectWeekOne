@@ -10,6 +10,10 @@
 </head>
 
 <body>
-
+	<h1>Welcom to My First Webpage!</h1>
+	<p>Hello! My name is John Tenney. This is my very first webpage that I’m building for my web design class.</p>
+	<a href="https://www.google.com">Visit Google</a>
+	<br><br>
+	<img src="https://static.vecteezy.com/system/resources/previews/005/857/332/non_2x/funny-portrait-of-cute-corgi-dog-outdoors-free-photo.jpg" alt="corgo dogo" width="50%">
 </body>
 </html>
