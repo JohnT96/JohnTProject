@@ -1,38 +1,39 @@
 body {
-  background: linear-gradient(to right, #f0f8ff, #e6e6fa); 
+  background: linear-gradient(to right, #f0f8ff, #e6e6fa);
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
   padding: 0;
 }
-
 
 header {
   text-align: center;
   font-size: 2em;
   font-weight: bold;
   padding: 20px;
-  background-color: #4682b4; 
+  background-color: #4682b4;
   color: white;
 }
 
-
-nav ul {
-  list-style-type: none; 
-  display: flex; 
+/* NAV (Flexbox) */
+.nav-flex {
+  list-style-type: none;
+  display: flex;
   justify-content: center;
+  align-items: center;
+  gap: 12px;                /* flex gap requirement */
   padding: 0;
   margin: 0;
   background-color: #333;
+  flex-wrap: wrap;          /* helps on small screens */
 }
 
-nav ul li {
-  margin: 0 15px;
-}
+nav ul li { margin: 0 3px; }
 
 nav ul li a {
   text-decoration: none;
   color: white;
   padding: 10px 15px;
+  transition: background-color 0.3s ease;
 }
 
 nav ul li a:hover {
@@ -40,45 +41,33 @@ nav ul li a:hover {
   color: #ffd700;
 }
 
+/* MAIN content (Flexbox wrapper) */
+.content {
+  display: flex;            /* flex requirement */
+  flex-direction: column;   /* phone-first */
+  gap: 20px;                /* flex gap requirement */
+  padding: 20px;
+}
+
+/* Sections */
 section {
   padding: 20px;
-  margin: 20px;
+  margin: 0; /* spacing handled by .content gap */
   background-color: #f9f9f9;
   border: 1px solid #ddd;
   box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
-}
-
-
-footer {
-  text-align: center;
-  font-size: 0.8em;
-  padding: 15px;
-  background-color: #222;
-  color: #eee;
-}
-
-html { 
-  scroll-behavior: smooth; 
-}
-
-nav ul li a { 
-  transition: background-color 0.3s ease;
-}
-
-section {
   transition: transform 0.2s ease;
   transform-origin: center;
 }
 
-section:hover {
-  transform: scale(1.02);
-}
+section:hover { transform: scale(1.02); }
 
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; }
   section:hover { transform: none; }
 }
 
+/* Table */
 table.projects {
   width: 100%;
   border-collapse: collapse;
@@ -97,9 +86,7 @@ table.projects thead th {
   color: #fff;
 }
 
-table.projects col.alt {
-  background: #f9f9f9;
-}
+table.projects col.alt { background: #f9f9f9; }
 
 table.projects tfoot td {
   text-align: center;
@@ -120,4 +107,135 @@ table.projects caption {
   height: 80px;
   object-fit: cover;
   border-radius: 4px;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  font-size: 0.8em;
+  padding: 15px;
+  background-color: #222;
+  color: #eee;
+}
+
+/* Smooth anchor scroll */
+html { scroll-behavior: smooth; }
+
+/* ---------- Contact Form (Flexbox) ---------- */
+.contact-form {
+  display: flex;               /* flex requirement */
+  flex-direction: column;      /* phone-first */
+  gap: 14px;                   /* flex gap requirement */
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;      /* labels above inputs on phone */
+  gap: 6px;
+}
+
+.form-row-full { width: 100%; }
+
+.form-actions {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: flex-start;
+}
+
+.contact-form label {
+  font-weight: 600;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #bbb;
+  border-radius: 6px;
+  font: inherit;
+  background: #fff;
+
+  /* transitions requested */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* focus/invalid interactivity */
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: #4682b4;
+  box-shadow: 0 0 0 3px rgba(70, 130, 180, 0.15);
+}
+
+.contact-form input:invalid {
+  border-color: #d33;
+}
+
+/* submit button + transitions */
+.contact-form input[type="submit"] {
+  border: none;
+  border-radius: 6px;
+  padding: 12px 16px;
+  font-weight: 700;
+  background: #4682b4;
+  color: #fff;
+  cursor: pointer;
+
+  /* requested transition for background */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.contact-form input[type="submit"]:hover {
+  background-color: #3a6c95;
+  transform: translateY(-1px);
+}
+
+.contact-form input[type="submit"]:focus {
+  outline: 2px solid #3a6c95;
+  outline-offset: 2px;
+}
+
+/* ---------- Responsive Media Queries ---------- */
+/* Phone (min-width ~480px) – you already target phone by default */
+@media (min-width: 480px) {
+  /* keep column layout; no changes required here unless desired */
+}
+
+/* Tablet (min-width ~768px) */
+@media (min-width: 768px) {
+  .content {
+    flex-direction: row;     /* sections side-by-side on tablet+ */
+    align-items: flex-start;
+  }
+  .content > section {
+    flex: 1 1 0;
+  }
+
+  /* form rows side-by-side where it makes sense */
+  .contact-form {
+    max-width: 720px;
+  }
+
+  .form-row {
+    flex-direction: row;     /* label left, input right */
+    align-items: center;
+  }
+  .form-row > label {
+    width: 180px;
+    min-width: 180px;
+  }
+  .form-row > input,
+  .form-row > textarea {
+    flex: 1;
+  }
+}
+
+/* Desktop (min-width ~1024px) */
+@media (min-width: 1024px) {
+  .content {
+    gap: 28px;
+  }
+  .contact-form { max-width: 820px; }
 }
