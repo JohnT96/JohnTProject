@@ -1,80 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>My First Webpage</title>
-	<meta charset="UTF-8">
-	<meta name="description" content="My first webpage!">
-	<meta name="keywords" content= "html, project, webpage, beginner">
-	<meta name="author" content="John Tenney">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="styles.css">
+  <title>My First Webpage</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="My first webpage!">
+  <meta name="keywords" content="html, project, webpage, beginner">
+  <meta name="author" content="John Tenney">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-	<header>My First Webpage</header>
+  <header>My First Webpage</header>
 
-<nav>
-  <ul>
-    <li><a href="#">Home</a></li>
-    <li><a href="https://www.google.com">Google</a></li>
-	<li><a href="#projects">Projects</a></li>
- </ul>
-</nav>
+  <nav>
+    <ul class="nav-flex">
+      <li><a href="#">Home</a></li>
+      <li><a href="https://www.google.com">Google</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
-<section>
-  <h1>Welcome to My First Webpage!</h1>
-  <p>Hello! My name is John Tenney. This is my very first webpage that I’m building for my web design class.</p>
-  <img src="https://static.vecteezy.com/system/resources/previews/005/857/332/non_2x/funny-portrait-of-cute-corgi-dog-outdoors-free-photo.jpg" alt="corgo dogo" width="50%">
-</section>
+  <main class="content">
+    <section>
+      <h1>Welcome to My First Webpage!</h1>
+      <p>Hello! My name is John Tenney. This is my very first webpage that I’m building for my web design class.</p>
+      <img src="https://static.vecteezy.com/system/resources/previews/005/857/332/non_2x/funny-portrait-of-cute-corgi-dog-outdoors-free-photo.jpg" alt="corgo dogo" width="50%">
+    </section>
 
-	<section id="projects">
-  <h2>Projects</h2>
+    <section id="projects">
+      <h2>Projects</h2>
 
-  <table class="projects">
-    <caption>Portfolio Projects</caption>
+      <table class="projects">
+        <caption>Portfolio Projects</caption>
 
-    <colgroup>
-      <col class="alt">
-      <col>
-      <col class="alt">
-    </colgroup>
+        <colgroup>
+          <col class="alt">
+          <col>
+          <col class="alt">
+        </colgroup>
 
-    <thead>
-      <tr>
-        <th scope="col">Project Name</th>
-        <th scope="col">Description</th>
-        <th scope="col">Image</th>
-      </tr>
-    </thead>
+        <thead>
+          <tr>
+            <th scope="col">Project Name</th>
+            <th scope="col">Description</th>
+            <th scope="col">Image</th>
+          </tr>
+        </thead>
 
-    <tbody>
-      <tr>
-        <td>Responsive Blog</td>
-        <td>A simple layout using HTML5 and responsive CSS.</td>
-        <td>
-          <img src="https://w3-lab.com/wp-content/uploads/2019/12/Get-the-Most-Fancied-Web-Development-Services-min-scaled.jpg">
-        </td>
-      </tr>
-      <tr>
-        <td>Storefront Page</td>
-        <td>Tech store page with navigation, product section, and styled table.</td>
-        <td>
-          <img src="https://png.pngtree.com/background/20230527/original/pngtree-computer-store-with-many-computers-and-displays-picture-image_2759015.jpg" alt="Storefront Landing preview">
-        </td>
-      </tr>
-    </tbody>
+        <tbody>
+          <tr>
+            <td>Responsive Blog</td>
+            <td>A simple layout using HTML5 and responsive CSS.</td>
+            <td>
+              <img src="https://w3-lab.com/wp-content/uploads/2019/12/Get-the-Most-Fancied-Web-Development-Services-min-scaled.jpg" alt="Responsive Blog preview">
+            </td>
+          </tr>
+          <tr>
+            <td>Storefront Page</td>
+            <td>Tech store page with navigation, product section, and styled table.</td>
+            <td>
+              <img src="https://png.pngtree.com/background/20230527/original/pngtree-computer-store-with-many-computers-and-displays-picture-image_2759015.jpg" alt="Storefront Landing preview">
+            </td>
+          </tr>
+        </tbody>
 
-    <tfoot>
-      <tr>
-        <td colspan="3">Sample projects for coursework demonstration.</td>
-      </tr>
-    </tfoot>
-  </table>
-</section>
+        <tfoot>
+          <tr>
+            <td colspan="3">Sample projects for coursework demonstration.</td>
+          </tr>
+        </tfoot>
+      </table>
+    </section>
 
-<footer>
+    <!-- NEW: Contact Section -->
+    <section id="contact">
+      <h2>Contact</h2>
+      <form class="contact-form" action="#" method="post">
+        <div class="form-row">
+          <label for="name">Your Name</label>
+          <input id="name" name="name" type="text" placeholder="John Doe" required>
+        </div>
+
+        <div class="form-row">
+          <label for="email">Email Address</label>
+          <input id="email" name="email" type="email" placeholder="you@example.com" required>
+        </div>
+
+        <div class="form-row">
+          <label for="subject">Subject</label>
+          <input id="subject" name="subject" type="text" placeholder="What's up?">
+        </div>
+
+        <div class="form-row form-row-full">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" placeholder="Write your message here..."></textarea>
+        </div>
+
+        <div class="form-actions">
+          <input type="submit" value="Send Message">
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer>
     <p>&copy; 2025 John Tenney. All rights reserved.</p>
-</footer>
-
+  </footer>
 </body>
 </html>
