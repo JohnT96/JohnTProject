@@ -1,345 +1,233 @@
 body {
-  background: linear-gradient(to right, #f0f8ff, #e6e6fa);
-  font-family: Arial, Helvetica, sans-serif;
-  margin: 0;
-  padding: 0;
+
+    margin: 0;
+
+    font-family: Arial, sans-serif;
+
+    background-color: #dfe3f0;
+
+    color: black;
+
 }
+
+/* Header */
 
 header {
-  text-align: center;
-  font-size: 2em;
-  font-weight: bold;
-  padding: 20px;
-  background-color: #4682b4;
-  color: white;
+
+    background-color: #4682b4;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 20px;
+
 }
 
-/* NAV (Flexbox) */
+/* Navigation */
+
+nav {
+
+    background-color: #333;
+
+    padding: 10px;
+
+}
+
 .nav-flex {
-  list-style-type: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 12px;                /* flex gap requirement */
-  padding: 0;
-  margin: 0;
-  background-color: #333;
-  flex-wrap: wrap;          /* helps on small screens */
+
+    display: flex;
+
+    justify-content: center;
+
+    list-style: none;
+
+    gap: 30px;
+
+    margin: 0;
+
+    padding: 0;
+
 }
 
-nav ul li { margin: 0 3px; }
+nav a {
 
-nav ul li a {
-  text-decoration: none;
-  color: white;
-  padding: 10px 15px;
-  transition: background-color 0.3s ease;
+    color: white;
+
+    text-decoration: none;
+
 }
 
-nav ul li a:hover {
-  background-color: #575757;
-  color: #ffd700;
-}
+/* Main Content */
 
-/* MAIN content (Flexbox wrapper) */
 .content {
-  display: flex;            /* flex requirement */
-  flex-direction: column;   /* phone-first */
-  gap: 20px;                /* flex gap requirement */
-  padding: 20px;
+
+    display: flex;
+
+    gap: 20px;
+
+    padding: 20px;
+
 }
 
-/* Sections */
 section {
-  padding: 20px;
-  margin: 0; /* spacing handled by .content gap */
-  background-color: #f9f9f9;
-  border: 1px solid #ddd;
-  box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
-  transition: transform 0.2s ease;
-  transform-origin: center;
-}
 
-section:hover { transform: scale(1.02); }
+    background-color: white;
 
-@media (prefers-reduced-motion: reduce) {
-  * { transition: none !important; }
-  section:hover { transform: none; }
-}
+    padding: 20px;
 
-/* Table */
-table.projects {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-table.projects th,
-table.projects td {
-  border: 1px solid #ccc;
-  padding: 12px;
-  text-align: left;
-  vertical-align: top;
-}
-
-table.projects thead th {
-  background: #444;
-  color: #fff;
-}
-
-table.projects col.alt { background: #f9f9f9; }
-
-table.projects tfoot td {
-  text-align: center;
-  font-style: italic;
-  border-top: 2px solid #ccc;
-}
-
-table.projects caption {
-  caption-side: top;
-  font-weight: bold;
-  text-align: left;
-  margin-bottom: 8px;
-}
-
-#projects img {
-  display: block;
-  width: 120px;
-  height: 80px;
-  object-fit: cover;
-  border-radius: 4px;
-}
-
-/* FOOTER */
-footer {
-  text-align: center;
-  font-size: 0.8em;
-  padding: 15px;
-  background-color: #222;
-  color: #eee;
-}
-
-/* Smooth anchor scroll */
-html { scroll-behavior: smooth; }
-
-/* ---------- Contact Form (Flexbox) ---------- */
-.contact-form {
-  display: flex;               /* flex requirement */
-  flex-direction: column;      /* phone-first */
-  gap: 14px;                   /* flex gap requirement */
-}
-
-.form-row {
-  display: flex;
-  flex-direction: column;      /* labels above inputs on phone */
-  gap: 6px;
-}
-
-.form-row-full { width: 100%; }
-
-.form-actions {
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
-  justify-content: flex-start;
-}
-
-.contact-form label {
-  font-weight: 600;
-}
-
-.contact-form input[type="text"],
-.contact-form input[type="email"],
-.contact-form textarea {
-  width: 100%;
-  padding: 10px 12px;
-  border: 1px solid #bbb;
-  border-radius: 6px;
-  font: inherit;
-  background: #fff;
-
-  /* transitions requested */
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* focus/invalid interactivity */
-.contact-form input:focus,
-.contact-form textarea:focus {
-  outline: none;
-  border-color: #4682b4;
-  box-shadow: 0 0 0 3px rgba(70, 130, 180, 0.15);
-}
-
-.contact-form input:invalid {
-  border-color: #d33;
-}
-
-/* submit button + transitions */
-.contact-form input[type="submit"] {
-  border: none;
-  border-radius: 6px;
-  padding: 12px 16px;
-  font-weight: 700;
-  background: #4682b4;
-  color: #fff;
-  cursor: pointer;
-
-  /* requested transition for background */
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.contact-form input[type="submit"]:hover {
-  background-color: #3a6c95;
-  transform: translateY(-1px);
-}
-
-.contact-form input[type="submit"]:focus {
-  outline: 2px solid #3a6c95;
-  outline-offset: 2px;
-}
-
-/* ---------- Responsive Media Queries ---------- */
-/* Phone (min-width ~480px) – you already target phone by default */
-@media (min-width: 480px) {
-  /* keep column layout; no changes required here unless desired */
-}
-
-/* Tablet (min-width ~768px) */
-@media (min-width: 768px) {
-  .content {
-    flex-direction: row;     /* sections side-by-side on tablet+ */
-    align-items: flex-start;
-  }
-  .content > section {
-    flex: 1 1 0;
-  }
-
-  /* form rows side-by-side where it makes sense */
-  .contact-form {
-    max-width: 720px;
-  }
-
-  .form-row {
-    flex-direction: row;     /* label left, input right */
-    align-items: center;
-  }
-  .form-row > label {
-    width: 180px;
-    min-width: 180px;
-  }
-  .form-row > input,
-  .form-row > textarea {
     flex: 1;
-  }
+
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+
 }
 
-/* Desktop (min-width ~1024px) */
-@media (min-width: 1024px) {
-  .content {
-    gap: 28px;
-  }
-  .contact-form { max-width: 820px; }
+/* Modal Styles */
+
+.modal-overlay {
+
+    position: fixed;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    background-color: rgba(0, 0, 0, 0.6);
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    z-index: 1000;
+
 }
 
-/* ---------- Week 3 JavaScript Dynamic Elements ---------- */
-.page-notification {
-  text-align: center;
-  padding: 12px;
-  background-color: #ffd700;
-  color: #222;
-  font-weight: bold;
-}
+.modal-content {
 
-.highlight-heading {
-  color: #2f5f85;
-  border-bottom: 3px solid #4682b4;
-  padding-bottom: 6px;
-}
+    background-color: white;
 
-.new-project-message {
-  margin-top: 16px;
-  padding: 12px;
-  background-color: #eef6ff;
-  border-left: 4px solid #4682b4;
-}
+    padding: 30px;
 
-.sending-message {
-  font-weight: bold;
-  color: #b36b00;
-}
+    border-radius: 10px;
 
-.success-message {
-  font-weight: bold;
-  color: #1f7a1f;
-}
-/* =========================
-  background-color: white;
-  padding: 30px;
-  border-radius: 10px;
-  text-align: center;
-  width: 300px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    width: 300px;
+
+    text-align: center;
+
 }
 
 .modal-content button {
-  margin-top: 15px;
-  padding: 10px 16px;
-  border: none;
-  background-color: #4682b4;
-  color: white;
-  border-radius: 6px;
-  cursor: pointer;
+
+    padding: 10px 15px;
+
+    border: none;
+
+    background-color: #4682b4;
+
+    color: white;
+
+    cursor: pointer;
+
+    border-radius: 5px;
+
 }
 
-/* =========================
-   Dark Mode Styles
-========================= */
+/* Dark Mode */
+
 .dark-mode {
-  background: #1e1e1e;
-  color: white;
+
+    background-color: #1f1f1f;
+
+    color: white;
+
 }
 
 .dark-mode section {
-  background-color: #2b2b2b;
-  border-color: #555;
-  color: white;
+
+    background-color: #2d2d2d;
+
+    color: white;
+
 }
 
 .dark-mode header {
-  background-color: #111;
+
+    background-color: #111;
+
 }
 
-.dark-mode footer {
-  background-color: #111;
+.dark-mode nav {
+
+    background-color: #000;
+
 }
 
-.dark-mode .contact-form input,
-.dark-mode .contact-form textarea {
-  background-color: #444;
-  color: white;
-  border-color: #777;
+.dark-mode input,
+.dark-mode textarea {
+
+    background-color: #444;
+
+    color: white;
+
+    border: 1px solid #777;
+
 }
 
-.dark-mode-toggle {
-  margin-bottom: 15px;
+/* Table */
+
+table {
+
+    width: 100%;
+
+    border-collapse: collapse;
+
 }
 
-/* =========================
-   Notification Styles
-========================= */
-.page-notification {
-  background-color: #2f5f85;
-  color: white;
-  text-align: center;
-  padding: 10px;
-  font-weight: bold;
+th,
+td {
+
+    border: 1px solid #ccc;
+
+    padding: 10px;
+
 }
 
-.success-message {
-  color: green;
-  font-weight: bold;
+/* Contact Form */
+
+.contact-form {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+
 }
 
-.sending-message {
-  color: orange;
-  font-weight: bold;
+.form-row {
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+/* Footer */
+
+footer {
+
+    background-color: #4682b4;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 10px;
+
 }
