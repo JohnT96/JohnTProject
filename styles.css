@@ -271,3 +271,75 @@ html { scroll-behavior: smooth; }
   font-weight: bold;
   color: #1f7a1f;
 }
+/* =========================
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  width: 300px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+
+.modal-content button {
+  margin-top: 15px;
+  padding: 10px 16px;
+  border: none;
+  background-color: #4682b4;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* =========================
+   Dark Mode Styles
+========================= */
+.dark-mode {
+  background: #1e1e1e;
+  color: white;
+}
+
+.dark-mode section {
+  background-color: #2b2b2b;
+  border-color: #555;
+  color: white;
+}
+
+.dark-mode header {
+  background-color: #111;
+}
+
+.dark-mode footer {
+  background-color: #111;
+}
+
+.dark-mode .contact-form input,
+.dark-mode .contact-form textarea {
+  background-color: #444;
+  color: white;
+  border-color: #777;
+}
+
+.dark-mode-toggle {
+  margin-bottom: 15px;
+}
+
+/* =========================
+   Notification Styles
+========================= */
+.page-notification {
+  background-color: #2f5f85;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  font-weight: bold;
+}
+
+.success-message {
+  color: green;
+  font-weight: bold;
+}
+
+.sending-message {
+  color: orange;
+  font-weight: bold;
+}
